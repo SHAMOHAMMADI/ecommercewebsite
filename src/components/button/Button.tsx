@@ -6,12 +6,12 @@ type TButton = ComponentProps<"button"> & {
     variant : TVariant
 }
 
-function Button({children ,variant,...rest}:TButton) {
+function Button({children ,style , variant,...rest}:TButton) {
    
     console.log(checkVariant(variant))
 
   return (
-    <button {...rest} style={{...checkVariant(variant)}}>
+    <button {...rest} style={{...style , ...checkVariant(variant)}}>
 {children}
     </button>
   )
@@ -21,12 +21,12 @@ export default Button
 
 function checkVariant ( variant: TVariant){
     if (variant === "primary"){
-        return {background:"blue",color:"white"};
+        return {background:"blue",color:"white", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"};
     }else if (variant === "secondary"){
-        return {background:"gray", color:"black"};
+        return {background:"gray", color:"black", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"};
     }else if (variant === "danger"){
-        return {background :"red", color: "white"};
+        return {background :"red", color: "white", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"};
     }else if (variant === "warning"){
-        return {background : "yellow", color: "black"}
+        return {background : "yellow", color: "black", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"}
     }
 }
