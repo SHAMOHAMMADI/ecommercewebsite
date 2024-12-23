@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
    
-      <div className="flex flex-row-reverse w-11/12 border h-24 my-4 shadow-inner rounded-lg px-4 mx-6 ">
+      <div className="flex flex-row-reverse w-11/12 border h-24 my-4 shadow-inner rounded-lg px-4 mx-auto  ">
         <ul className="flex flex-row-reverse [&>*]:p-2 ] w-10/12 m-auto [&>*]:px-4  [&>*]:ml-8 hover:[&>*]:bg-blue-600 hover:[&>*]:text-white hover:[&>*]:rounded-md ">
           <li>
             <Link to="/">صفحه اصلی</Link>

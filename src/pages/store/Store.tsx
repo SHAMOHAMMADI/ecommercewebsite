@@ -1,41 +1,31 @@
 import ProductItem from "../../components/productItem/ProductItem";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { Link, Links } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { getProducts } from "../../services/api";
+import Container from "../../components/container/Container";
+import { IProducts } from "../../types/ServerTypes";
 
 function Store() {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState<IProducts[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5174/data").then((result) => {
-      setProducts(result.data);
-    });
+   getProducts().then(result=>{
+    setProducts(result)
+   })
+
+    
   }, []);
 
   return (
-    <div className=" mx-6 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid ">
-        <Link to={`/productpage/${1}`}>
-      <ProductItem />
+    <Container>
+    <div className=" mx-6  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:grid-cols-2 lg:grid ">
+        {products.map((re)=>(
+            <Link key={re.id} to={`/productpage/${re.id}`}>
+      <ProductItem  {...re}/>
       </Link>
-      <Link to={`/productpage/${2}`}>
-      <ProductItem />
-      </Link>
-      <Link to={`/productpage/${3}`}>
-      <ProductItem />
-      </Link>
-      <Link to={`/productpage/${4}`}>
-      <ProductItem />
-      </Link>
-      <Link to={`/productpage/${5}`}>
-      <ProductItem />
-      </Link>
-      <Link to={`/productpage/${6}`}>
-      <ProductItem />
-      </Link>
-      <Link to={`/productpage/${7}`}>
-      <ProductItem />
-      </Link>
+        ))}
     </div>
+        </Container>
   );
 }
 

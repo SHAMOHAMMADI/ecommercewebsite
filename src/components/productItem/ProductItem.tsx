@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from "react";
 import Container from "../container/Container";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { IProducts } from "../../types/ServerTypes";
+import Button from "../button/Button";
 
-function ProductItem() {
+
+type TProductItem = IProducts
+
+
+function ProductItem({  title ,price ,description ,category ,image ,rating}:TProductItem) {
 
 
   return (
     <Container>
    
-      <div className=" shadow border rounded-lg">
-        <img src="/10.jpg" alt="" className="w-full rounded-lg " />
-        <div className="flex flex-col p-2">
-          <h3 className="text-right">عنوان محصول</h3>
-          <p className="text-justify p-6">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis a
-            maxime sed eveniet cumque aut molestias cupiditate incidunt illum
-            dolores?
+      <div className=" relative shadow border rounded-lg  h-svh mb-6">
+        <img src={image} alt="" className="w-full p-6 h-2/4 rounded-lg " />
+        <div className="flex flex-col p-2 text-center absolute bottom-0">
+            <h3>{title}</h3>
+          <h3 className="text-center p-2">{category}</h3>
+          <p className="text-justify p-6 line-clamp-3 m-2">
+            {description}
           </p>
-          <span className="text-left">55$</span>
+         <Button variant="danger">{price}</Button>
+          <div className="flex justify-evenly">
+
+          <span>{rating.count}</span>
+          <span>{rating.rate}</span>
+          </div>
         </div>
       </div>
     </Container>
