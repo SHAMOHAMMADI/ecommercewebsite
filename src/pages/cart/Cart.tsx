@@ -11,10 +11,10 @@ function Cart() {
   return (
     <div>
         <Container>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
+          {cartItems.map((res)=>(
+            <CartItem  {...res} />
+          ))}
+          
           <div className="bg-gray-50 shadow-inner border rounded text-right p-2 px-6 m-6">
             <p>قیمت کل : 1000</p>
             <p>تخفیف شما : 200</p>

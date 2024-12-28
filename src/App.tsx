@@ -5,22 +5,28 @@ import Navbar from "./components/navbar/Navbar";
 import Layout from "./components/layout/Layout";
 import ProductPage from "./pages/productPage/ProductPage";
 import Cart from "./pages/cart/Cart";
-import { ShoppingCartContext, ShoppingCartProvider } from "./context/ShoppingCartContext";
+import {
+  ShoppingCartContext,
+  ShoppingCartProvider,
+} from "./context/ShoppingCartContext";
 import { useState } from "react";
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
 
 function App() {
-  const [cartItems , setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([]);
   return (
     <ShoppingCartProvider>
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/navbar" element={<Navbar />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/productPage/:id" element={<ProductPage/>}/>
-        <Route path="/cart" element={<Cart />}/>
-      </Routes>
-    </Layout>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/navbar" element={<Navbar />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/productPage/:id" element={<ProductPage />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </Layout>
     </ShoppingCartProvider>
   );
 }

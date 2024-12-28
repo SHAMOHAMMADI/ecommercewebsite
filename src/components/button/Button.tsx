@@ -10,7 +10,7 @@ function Button({children ,style , variant,...rest}:TButton) {
    
 
   return (
-    <button {...rest} style={{ ...style , ...checkVariant(variant)}}>
+    <button {...rest} style={{  ...style , ...checkVariant(variant)}}>
 {children}
     </button>
   )
@@ -20,14 +20,14 @@ export default Button
 
 function checkVariant ( variant?: TVariant){
     if (variant === "primary"){
-        return {background:"blue",color:"white", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"};
+        return {background:"#0055ff",color:"white", padding:"5px",borderRadius:"5px", margin:"10px ",paddingLeft:"2rem",paddingRight:"2rem"};
     }else if (variant === "secondary"){
-        return {background:"gray", color:"black", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"};
+        return {background:"gray", color:"black", padding:"5px",borderRadius:"5px", margin:"10px"};
     }else if (variant === "danger"){
-        return {background :"red", color: "white", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"};
+        return {background :"#ff2200", color: "white", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"2rem",paddingRight:"2rem"};
     }else if (variant === "warning"){
-        return {background : "yellow", color: "black", padding:"5px",borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"}
+        return {background : "yellow", color: "black", padding:"5px",borderRadius:"5px", margin:"10px"}
     }else if (variant === "success"){
-            return {background:"green",color:"white", padding:"5px" , borderRadius:"5px", margin:"10px",paddingLeft:"10px",paddingRight:"10px"}
+            return {background:"green",color:"white", padding:"5px" , borderRadius:"5px", margin:"10px"}
         }
     }
