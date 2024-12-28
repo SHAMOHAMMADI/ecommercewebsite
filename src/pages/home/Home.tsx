@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
+import Container from "../../components/container/Container";
 
 function Home() {
   return (
     <>
-      <div className="h-screen w-full bg-gray-100">
+      <div className="h-screen w-full ">
+        <Container>
 
-        <p className="bg-blue-100 flex justify-center text-justify p-8">
+
+        <p className="bg-slate-50 shadow-inner rounded flex justify-center text-justify p-8">
           
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
           inventore, eum autem, aliquam sit reiciendis, facere fugit eos
@@ -32,6 +35,7 @@ function Home() {
           nihil non nemo! Voluptates animi molestias, quasi nostrum nesciunt
           blanditiis vitae
         </p>
+        </Container>
       </div>
     </>
   );
