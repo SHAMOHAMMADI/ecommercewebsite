@@ -18,7 +18,7 @@ function Store() {
 
   return (
     <Container>
-    <div className=" mx-6  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:grid-cols-2 lg:grid ">
+    <div className=" mx-6  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:grid-cols-2 lg:grid ">
         {products.map((re)=>(
             <Link key={re.id} to={`/productpage/${re.id}`}>
       <ProductItem  {...re}/>

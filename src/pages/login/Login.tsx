@@ -22,7 +22,7 @@ function Login() {
   return (
     <Container>
       <div className=" h-screen">
-        <div className="border w-full h-full p-4 flex bg-slate-50  flexusername items-center pt-16 flex-col [&>*]:my-4 [&>*]:py-2 [&>*]:rounded [&>*]:shodow-inner [&>*]:border [&>*]:px-2 [&>*]:w-6/12">
+        <div className="border w-full h-full p-4 flex bg-slate-50  flexusername items-center pt-16 flex-col [&>*]:my-4 [&>*]:py-2 [&>*]:rounded [&>*]:shodow-inner [&>*]:border [&>*]:px-2 [&>*]:w-96">
           <input
             type="username"
             placeholder="username"

@@ -12,9 +12,11 @@ function ProductItem({  title ,price ,description ,category ,image ,rating}:TPro
   return (
     <Container>
    
-      <div className=" relative shadow border rounded-lg  h-svh mb-6">
-        <img src={image} alt="" className="w-full p-6 h-2/4 rounded-lg " />
-        <div className="flex flex-col p-2 text-center absolute bottom-0">
+      <div className="flex flex-col p-4 justify-center items-center   shadow border rounded-lg  h-[700px] mb-6">
+        <img src={image} alt="" className="w-9/12 m-2 h-[400px] rounded-lg " />
+        <div className="flex flex-col p-2 text-center ">
+
+          
             <h3>{title}</h3>
           <h3 className="text-center p-2">{category}</h3>
           <p className="text-justify p-6 line-clamp-3 m-2">
