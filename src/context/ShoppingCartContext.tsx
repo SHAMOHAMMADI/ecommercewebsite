@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { SiEtihadairways } from "react-icons/si";
+// import { SiEtihadairways } from "react-icons/si";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { login } from "../services/api";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +47,7 @@ export function ShoppingCartProvider({ children }: IShoppingCartProvider) {
 
   const handleIncreaseProductQty = (id: number) => {
     setCartItems((currentItems) => {
-      let selectedItem = currentItems.find((item) => item.id == id);
+      const selectedItem = currentItems.find((item) => item.id == id);
       if (selectedItem == null) {
         return [...currentItems, { id: id, qty: 1 }];
       } else {
@@ -64,7 +64,7 @@ export function ShoppingCartProvider({ children }: IShoppingCartProvider) {
 
   const handleDecreaseProductQty = (id: number) => {
     setCartItems((currentItems) => {
-      let selectedItem = currentItems.find((item) => item.id != id);
+      const selectedItem = currentItems.find((item) => item.id != id);
       if (selectedItem?.qty === 1) {
         return currentItems.filter((item) => item.id !== id);
       } else {
@@ -97,7 +97,7 @@ export function ShoppingCartProvider({ children }: IShoppingCartProvider) {
 
   const handleLogin = (username:string , password:string)=>{
     login(username , password).finally(()=>{
-        let token = "ashuighasgiskhvfsdvashzdhfkzsd"
+        const token = "ashuighasgiskhvfsdvashzdhfkzsd"
         localStorage.setItem("token",token)
         setIsLogin(true);
         navigate("/")
@@ -111,7 +111,7 @@ export function ShoppingCartProvider({ children }: IShoppingCartProvider) {
   };
   
   useEffect(()=>{
-   let token = localStorage.getItem("token")
+   const token = localStorage.getItem("token")
    if(token){
     setIsLogin(true)
    }

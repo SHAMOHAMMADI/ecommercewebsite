@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-    baseURL:"http://localhost:5174"
+    baseURL:"http://localhost:5175"
 })
 
 export async function getProducts(){
