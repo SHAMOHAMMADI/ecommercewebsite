@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, SetStateAction, useContext, useEffect, useState } from "react";
 // import { SiEtihadairways } from "react-icons/si";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { login } from "../services/api";
@@ -21,7 +21,8 @@ interface IShoppingCartContext {
   cartQty: number;
   isLogin: boolean;
   handleLogOut: () => void;
-  handleLogin: (usernmae:string , password: string)=>void
+  handleLogin: (usernmae:string , password: string)=>void;
+  
 }
 // export const ShoppingCartContext = createContext<IShoppingCartContext>({
 //     cartItems : []
@@ -116,6 +117,12 @@ export function ShoppingCartProvider({ children }: IShoppingCartProvider) {
     setIsLogin(true)
    }
   },[])
+
+
+ 
+
+
+
   return (
     <ShoppingCartContext.Provider
       value={{

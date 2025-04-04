@@ -38,7 +38,7 @@ function Login() {
           />
           <Button
             variant="primary"
-            onClick={()=>handleLogin(user.username, user.password)}
+            onClick={() => handleLogin(user.username, user.password)}
           >
             {" "}
             ورود به حساب کاربری

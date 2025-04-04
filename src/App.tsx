@@ -13,24 +13,28 @@ import {
 import { useState } from "react";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Login from "./pages/login/Login";
+import SearchPage from "./pages/searchPage/SearchPage";
 
 function App() {
   // const [cartItems, setCartItems] = useState([]);
-  const {isLogin} = useShoppingCartContext()
+  const { isLogin } = useShoppingCartContext();
   return (
-    
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/navbar" element={<Navbar />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/productPage/:id" element={<ProductPage />} />
-          <Route path="/login" element={ isLogin ? <Navigate to="/" /> : <Login/>}/>
-          <Route element={<PrivateRoute />}>
-            <Route path="/cart" element={<Cart />} />
-          </Route>
-        </Routes>
-      </Layout>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/navbar" element={<Navbar />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/productPage/:id" element={<ProductPage />} />
+        <Route
+          path="/login"
+          element={isLogin ? <Navigate to="/" /> : <Login />}
+        />
+        <Route element={<PrivateRoute />}>
+          <Route path="/cart" element={<Cart />} />
+        </Route>
+        <Route path="/searchPage" element={<SearchPage />} />
+      </Routes>
+    </Layout>
   );
 }
 
